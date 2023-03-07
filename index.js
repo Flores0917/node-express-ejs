@@ -21,7 +21,7 @@ app.get('/about', (req, res) => {
 
 app.get('/contact', (req, res) => {
   var title = 'Contact Page'
-  res.render('contact/index', { 'title': title })
+  res.render('pages/contact', { 'title': title })
 });
 
 
