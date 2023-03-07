@@ -19,25 +19,31 @@ app.get('/about', (req, res) => {
   res.render('pages/about', { 'title': title })
 });
 
+app.get('/contact', (req, res) => {
+  var title = 'Contact Page'
+  res.render('contact/index', { 'title': title })
+});
+
+
 
 //users index is our list page
 app.get('/users', function(req, res) {
-	var title = 'Users Page';
-	res.render('users/index', {
-    	title: title,
-    	users: data
-	});
+  var title = 'Users Page';
+  res.render('users/index', {
+    title: title,
+    users: data
+  });
 });
 
 
 //add user/view route - we are cheating by using the array index - 1
 app.get('/users/view/:id', function(req, res) {
- var title = 'User Page';
- var id = req.params.id;
- res.render('users/view', {
-     title: title,
-     user: data[--id]
- });
+  var title = 'User Page';
+  var id = req.params.id;
+  res.render('users/view', {
+    title: title,
+    user: data[--id]
+  });
 })
 
 app.listen(port, () => {
