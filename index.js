@@ -14,22 +14,22 @@ app.get('/', (req, res) => {
   res.render('pages/index', { 'title': title })
 });
 
-app.get('/about', (req, res) => {
-  var title = 'About Page'
-  res.render('pages/about', { 'title': title })
+app.get('/sports', (req, res) => {
+  var title = 'Sports Page'
+  res.render('pages/sports', { 'title': title })
 });
 
-app.get('/contact', (req, res) => {
-  var title = 'Contact Page'
-  res.render('pages/contact', { 'title': title })
+app.get('/hikes', (req, res) => {
+  var title = 'Hikes Page'
+  res.render('pages/hikes', { 'title': title })
 });
 
 
 
 //users index is our list page
-app.get('/users', function(req, res) {
-  var title = 'Users Page';
-  res.render('users/index', {
+app.get('/videogames', function(req, res) {
+  var title = 'Video Games Page';
+  res.render('videogames/videogames', {
     title: title,
     users: data
   });
@@ -37,14 +37,14 @@ app.get('/users', function(req, res) {
 
 
 //add user/view route - we are cheating by using the array index - 1
-app.get('/users/view/:id', function(req, res) {
-  var title = 'User Page';
-  var id = req.params.id;
-  res.render('users/view', {
-    title: title,
-    user: data[--id]
-  });
-})
+// app.get('/users/view/:id', function(req, res) {
+//   var title = 'User Page';
+//   var id = req.params.id;
+//   res.render('users/view', {
+//     title: title,
+//     user: data[--id]
+//   });
+// })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
